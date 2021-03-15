@@ -29,5 +29,5 @@ module.exports = function transform(arr) {
       flag = false
     }
   }
-  return result;
-};
+  return result
+}
