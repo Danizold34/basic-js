@@ -4,29 +4,30 @@ const chainMaker = {
   chain: [],
   
   getLength() {
-          return this.chain.length ;
+          return this.chain.length
   },
   addLink(value = '') {
   value = value === '' ? `( )` : `( ${value} )`
-         this.chain.push(value) ;
-         return this ;
+         this.chain.push(value)
+         return this
   },
   removeLink(position) {
     if (!parseInt(position) || isNaN(parseInt(position)) || this.chain[position] === undefined) {
-        this.chain = [] ;
-        throw new Error() ; 
+        this.chain = []
+        throw new Error()
   }
         this.chain.splice(position - 1, 1)
-        return this ; 
+        return this
   },
   reverseChain() {
         this.chain.reverse()
-        return this ;
+        return this
   },
   finishChain() {
         let chained = this.chain.join('~~');
-        this.chain = [] ; 
-        return chained ;
+        this.chain = []
+        return chained
   }
+};
 
 module.exports = chainMaker;
